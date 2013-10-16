@@ -1,0 +1,749 @@
+==================General requirement====================
+Internet computer store
+
+I need to keep track of orders that are placed in my shop. Customer information is crucial for my ability to work. Customers are ordering products from my shop as well as components. We always provide warranty for our products and shipment. We need to know, when product has been shipped and when it has arrived to final destination. We also keep track of suppliers.
+
+I am your customer. I want to build software for my company and I want you to design and build my database. I need good description of all tables and diagram which presents the structure. Then I need a script which is going to create complete database for me. I also need a little application (JAVA or .NET) that allows me to see data stored within database as well as add it and manipulate it.
+
+==================Requirement analysis====================
+
+The following is the email talk with the customers.
+
+Hi, Sir, as you have mentioned that the customer information is crucial for you, so I think that maybe you need the customer name, ID in our system, sex, age, phone number, email, address, purchase history/record. Is there any other information that you need or it there any information above that you do not need?
+
+Also, about the supplier, I think that may you need the supplier name, ID in our system,phone number, email, address, supply history. Is there any other information that you need or it there any information above that you do not need?
+
+In addition, about the products and components information, I think that may you need the name, ID in our system, date of manufacture, warranty time(unit: day), amount, purchase record. Is there any other information that you need or it there any information above that you do not need?
+
+Finally, about the shipment information, I think that may you need the time when product has been shipped and the time when it has arrived to final destination. Is there any other information that you need or it there any information above that you do not need? And also,should I consider that if the customers are not satisfied with the products/components or they ask for repair within the warranty time, they can request for returning back? 
+
+Thank you very much for cooperation and look forward your reply.
+
+==
+Show parent | Reply
+	
+Re: Project discussion
+by Rafal Kokoszka - Monday, 26 March 2012, 10:35 pm 	
+Hi,
+
+First of all I am happy to see first signs of interest and I hope they are going to continue. 
+The listed characteristics about customer are indeed required. All the basic information you have listed are correct. I haven't been thinking about gender (sex) before, but it might useful while adjusting the future newsletter to certain type of customer. We are serving not only personal customer, but also companies - our system should be ready to handle it.
+Purchase history might be practical solution/tool for both shop and customer. Purchase history should work as a link in between customer and his/her orders.
+Basic information about supplier is also correctly listed. I haven't been thinking about purchasing record beforehand, but it seems to be a perfect idea. Purchasing should also work as link in between products/components and supplier. Many of our products are supplied by the same supplier, but obviously we have very many suppliers. It would be good to know as well the estimated delivery time of new products from certain supplier since the order to supplier is made by our company.
+Product and component are in fact both products. Component is a special type of product. We count warranty rather in months.
+We need to be able to see Shipment along with related Order - they go together.
+I am not sure yet, if we want to handle repair request and return within this system. I have to think about it for a while.
+Br,
+Rafal K.
+
+==	
+Re: Project discussion
+by Chunqiu Lu - Monday, 26 March 2012, 11:46 pm
+ 	
+I got it, Sir, thanks for your help. 
+
+Another question is about the warranty time of the product of the supplier, in the supply history. We also need to consider it and it is the same as the warranty time for the customers, right?
+
+In addition, should we consider about the expense of shipment to customers.
+
+Finally, about the application request, besides the basic function of searching the information of products, customers and supplier, I can supply the service of product purchase ranking, customer purchase ranking, purchase report including the income and expenses, profits and so on, product comparison for both your shop and the customers. Is there any other information that you need or it there any information above that you do not need?
+
+Thank you very much for cooperation and look forward your reply.
+
+Best wishes
+Show parent | Reply
+==		
+Re: Project discussion
+by Rafal Kokoszka - Wednesday, 28 March 2012, 09:41 pm
+ 	
+Our shop offers only warranty which is provided by producer. Therefore it is the same. It would be good to store information about warranty along with product. Perhaps one day we would like to offer ability to extend warranty, but we don't have to think about it now.
+
+Keeping information about the cost of shipment is a good idea.
+
+Your idea concerning services sounds really good. How are you planning to implement software? What is the technology you want to use? Please provide me more details, so that I can check whether our shop can afford appropriate infrastructure.
+
+Show parent | Reply
+==		
+Re: Project discussion
+by Chunqiu Lu - Thursday, 29 March 2012, 01:13 am
+ 	
+The technology is Java server programming and thus I think that the service I mentioned is not so difficult to implement as they just reflect the previous and current condition with the dedicated data in the database. 
+
+However, in my opinion, what we should do now is to build a good database. The corresponding application based on it can be done in the following days. If time is enough, I think we can implement many useful application, such as the application @Zbigniew and I mentioned above and even prediction of the future condition.
+
+Therefore, Sir, is there any other information that you need? If possible, I can use JSP to implement them and talk with you about the detail in the following days. Of course, firstly, we should build a good database and also, the database depends on the possible applications.
+
+Best Wishes
+Show parent | Reply
+==		
+Re: Project discussion
+by Rafal Kokoszka - Thursday, 29 March 2012, 12:30 pm
+ 	
+I like your attitude 
+We can talk more about your technology selection after lecture. More interesting services you build, it is better. You can use your imagination. I like the services you have suggested.
+
+=======Requirement summary======
+After that, I summarized the application requirements as the following:
+In the application, first of all, different users (owner, customers and suppliers ) can login to the corresponding pages. In the pages, the users can search change and add the information of products, customers and suppliers, product purchase ranking, customer purchase ranking, purchase report including the income and expenses, profits and so on, product comparison. The detail authorization to the application is listed as the following:
+
+l search the information of products (owner, suppliers, customers)
+
+l change the information of products (owner, suppliers)
+
+l add the information of products (owner, suppliers)
+
+l search change and add the information of customers and suppliers(the users themselves and the owner)
+
+l product purchase ranking(owner, suppliers, customers)
+
+l customer purchase ranking(owner, suppliers, customers)
+
+l purchase report including the income and expenses, profits and so on(owner)
+
+l product comparison(owner, suppliers, customers)
+
+==================software design====================
+=======table design======
+The owner of the Internet computer store needs to keep track of orders that are placed in the shop. As the customer information is crucial for the ability to work, it should include the name, customer ID in our system, gender, age, email(also the ID in the login system), address, password in the login system and last update time keeping track of the modification history, all shown below.
+
+Customer information
+
+l name
+
+l customer ID in our system
+
+l gender
+
+l age
+
+l email(also the ID in the login system)
+
+l address
+
+l password in the login system
+
+l last update time keeping track of the modification history
+
+In the Internet computer store, customers order products as well as component. The store always provides warranty for products and shipment. Thus, the store needs to know when product has been shipped and when it has arrived to final destination. In detail, first of all, before order, the customer needs to know the information of the products, including name, type like screen, CPU and so on, supplier ID and product ID in our system, date of manufacture, warranty time, available amount, price, cost(hidden to the customer), view of the product, description of the product consisting of some detail information and last update time, all shown below.
+
+Product information
+
+l name 
+
+l product type
+
+lsupplier ID
+
+l product ID in our system
+
+l date of manufacture
+
+l warranty time
+
+l available amount
+
+l price
+
+l cost(hidden to the customer)
+
+l view of the product
+
+l description of the product consisting of some detail information
+
+l last update time
+
+In addition, to keep track of the shipment information both for the customers and the owners, the corresponding information should be provided including purchase ID in our system, product ID, order amount, customer order data, shipment arrive date and shipment expense for the owner of the shop, all shown below.
+
+Purchase record as well as shipment information
+
+l purchase ID in our system
+
+l product ID in our system
+
+l order amount
+
+l customer order data
+
+l shipment arrive date
+
+l shipment expense for the owner of the shop
+
+The store also wants to keep track of the supplier, so the information in terms of them should include the supplier name, supplier ID in our system, email(also the ID in the login system), address, password in the login page as well as the last update time, all shown below.
+
+Supplier information
+
+l Supplier information
+
+l supplier name
+
+l supplier ID in our system
+
+l email(also the ID in the login system)
+
+l address
+
+l password in the login page
+
+l the last update time
+
+Finally, like the purchase history, the store also needs to know the supply history, including supply ID in our system, supplier ID, product ID, amount of the products, order date, arrive date and shipment expense, all shown below.
+
+Supply record as well as shipment information
+
+l supply ID in our system
+
+l supplier ID
+
+l product ID
+
+l amount of the products
+
+l order date
+
+l arrive date
+
+l shipment expense
+
+
+
+Identify entities, attributes, relationships and cardinalities from description. Then describe each entity, its attributes with domains as well as relationships
+
+Customer information
+
+l name - varchar(20)
+
+l customer_ID - int(10), primary key
+
+l gender - varchar(10)
+
+l age - int(5)
+
+l email - varchar(20)
+
+l address_ID - int(5), foreign key
+
+l password - varchar(10)
+
+l last_update - timestamp
+
+Customer relationships:
+
+One student can be linked to one address. One to One relationship.
+
+Address information
+
+l address_ID - int(5), primary key
+l address – varchar(50)
+l district – varchar(50)
+l city_ID – int(5), foreign key
+l postal_code – int(5)
+l phone – varchar(20)
+l last_update – timestamp
+Address relationships
+
+Many addresses can be linked to one city. Many to One relationship.
+
+City information
+
+l city_ID - int(5), primary key
+
+l city – varchar(20)
+
+l country_ID – int(5), foreign key
+
+l last_update – timestamp
+
+City information
+
+Many cities can be linked to one country. Many to One relationship.
+
+Country information
+
+l country_ID – int(5), primary key
+
+l country – varchar(20)
+
+l last_update – timestamp
+
+Product information
+
+l name - varchar(20)
+
+l type – varchar(20)
+
+lsupplier_ID – int(5), foreign key
+
+l product_ID – int(5), primary key
+
+l date_of_manufacture - datetime
+
+l warranty_ime – int(5
+
+l amount – int(10
+
+l price - double
+
+l cost - double
+
+l view_ID – int(5), foreign key
+
+l description - text
+
+l last_update – timestamp
+
+Product relationship
+
+Many products can be linked to one supplier. Many to One relationship.
+
+One product can be linked to many views. One to Many relationship.
+
+Purchase record inforamtion
+
+l purchase_ID – int(10), primary key
+
+l customer_ID – int(5), foreign key
+l product_ID – int(5), foreign key
+
+l amount – int(5)
+
+l order_data - date
+
+l arrive_date -date
+
+l expense - double
+
+Purchase record relationship
+
+One purchase record can be linked to one customer. One to One relationship.
+
+One purchase record can be linked to one product. One to One relationship.
+
+Supplier information
+
+l name – varchar(10)
+
+l supplier_ID – int(5), primary key
+
+l email – varchar(10)
+
+l address_ID – int(5), foreign key
+
+l password – varchar(10)
+
+l last_update - timestamp
+
+Supplier relationship
+
+One supplier can be linked to one address. One to One relationship
+
+Supply record
+
+l supply_ID – int(10), primary key
+
+l supplier_ID – int(5), foreign key
+
+l product_ID – int(5), foreign key
+
+l amount – int(5)
+
+l order_date - date
+
+l arrive_date - date
+
+l shipment_expense - double
+
+Supply record relationship
+
+One supply record can be linked to one supplier. One to One relationship.
+
+One supply record can be linked to one product. One to One relationship.
+
+View information
+
+l view_ID – int(5), primary key
+
+l name – varchar(10)
+
+l description – text
+
+l view – mediumblob
+
+l last_update - timestamp
+
+=======table create======
+
+First of all, for the questions in the last sub-project, I explain why there is no order table in my database. The purchase record table has the function of order table. If the arrive_date in the purchase record is 0000-00-00, then we can judge it as an order.
+
+In addition, the View table stores the picture of the products, demonstrating the products to customers.
+
+1. Create the database
+
+CREATE DATABASE `e1100587_project` ;
+
+2.Create the database of customer information
+
+
+CREATE TABLE `e1100587_project`.`customer_info` (
+
+`customer_ID` INT( 10 ) NOT NULL ,
+
+`name` VARCHAR( 20 ) NOT NULL ,
+
+`gender` VARCHAR( 10 ) NOT NULL ,
+
+`age` INT( 5 ) NOT NULL ,
+
+`email` VARCHAR( 20 ) NOT NULL ,
+
+`address_ID` INT( 5 ) NOT NULL ,
+
+`password` VARCHAR( 10 ) NOT NULL ,
+
+`last_update` TIMESTAMP NOT NULL
+
+) 
+
+Customer information
+
+l name - varchar(20)
+
+l customer_ID - int(10), primary key
+
+l gender - varchar(10)
+
+l age - int(5)
+
+l email - varchar(20)
+
+l address_ID - int(5), foreign key
+
+l password - varchar(10)
+
+l last_update - timestamp
+
+Customer relationships:
+
+One student can be linked to one address. One to One relationship.
+
+
+
+
+
+
+3. Create the database of address information
+
+CREATE TABLE `e1100587_project`.`address` (
+
+`address_ID` INT( 5 ) NOT NULL ,
+
+`address` VARCHAR( 50 ) NOT NULL ,
+
+`district` VARCHAR( 50 ) NOT NULL ,
+
+`city_ID` INT( 5 ) NOT NULL ,
+
+`postal_code` VARCHAR( 10 ) NOT NULL ,
+
+`phone` VARCHAR( 20 ) NOT NULL ,
+
+`last_update` TIMESTAMP NOT NULL
+
+);
+
+Address information
+
+l address_ID - int(5), primary key
+l address – varchar(50)
+l district – varchar(50)
+l city_ID – int(5), foreign key
+l postal_code – int(5)
+l phone – varchar(20)
+l last_update – timestamp
+Address relationships
+
+Many addresses can be linked to one city. Many to One relationship.
+
+
+4. Create the database of city information
+
+CREATE TABLE `e1100587_project`.`city` (
+
+`city_ID` INT( 5 ) NOT NULL ,
+
+`city` VARCHAR( 20 ) NOT NULL ,
+
+`country_ID` INT( 5 ) NOT NULL ,
+
+`last_update` TIMESTAMP NOT NULL
+
+)
+
+City information
+
+l city_ID - int(5), primary key
+
+l city – varchar(20)
+
+l country_ID – int(5), foreign key
+
+l last_update – timestamp
+
+City information
+
+Many cities can be linked to one country. Many to One relationship.
+
+
+5. Create the database of country information
+
+CREATE TABLE `e1100587_project`.`country` (
+
+`country_ID` INT( 5 ) NOT NULL ,
+
+`country` VARCHAR( 20 ) NOT NULL ,
+
+`last_update` TIMESTAMP NOT NULL
+
+)
+
+Country information
+
+l country_ID – int(5), primary key
+
+l country – varchar(20)
+
+l last_update – timestamp
+
+6.Create the database of product information
+
+
+CREATE TABLE 'e1100587_project`.`product_info` (
+
+  `product_ID` INT NOT NULL ,
+
+  `supplier_ID` INT(5) NOT NULL ,
+
+  `type_ID` INT(20) NOT NULL ,
+
+  `view_ID` INT(5) NOT NULL ,
+
+  `name` VARCHAR(20) NULL ,
+
+  `date_of_manufacture` DATETIME NULL ,
+
+  `warranty_time` INT(5) NULL ,
+
+  `amount` INT(5) NULL ,
+
+  `price` DOUBLE NULL ,
+
+  `cost` DOUBLE NULL ,
+
+  `description` TEXT NULL ,
+
+  `last_update` TIMESTAMP NULL 
+
+)
+
+Product information
+
+l name - varchar(20)
+
+l type_ID – int(20)
+
+lsupplier_ID – int(5), foreign key
+
+l product_ID – int(5), primary key
+
+l date_of_manufacture - datetime
+
+l warranty_ime – int(5)
+
+l amount – int(10)
+
+l price - double
+
+l cost - double
+
+l view_ID – int(5), foreign key
+
+l description - text
+
+l last_update – timestamp
+
+Product relationship
+
+Many products can be linked to one supplier. Many to One relationship.
+
+One product can be linked to many views. One to Many relationship.
+
+Many products can be linked to one product type. Many to One relationship.
+
+7. Create the database of purchase record information
+
+
+CREATE  TABLE `e1100587_project.`purchase_record` (
+
+  `purchase_ID` INT(10) NOT NULL ,
+
+  `product_ID` INT(5) NOT NULL ,
+
+  `customer_ID` INT(5) NOT NULL ,
+
+  `amount` INT(5) NULL ,
+
+  `order_date` DATE NULL ,
+
+  `arrive_date` DATE NULL ,
+
+  `shipment_expense` DOUBLE NULL 
+
+)
+
+Purchase record information
+
+l purchase_ID – int(10), primary key
+
+l customer_ID – int(5), foreign key
+l product_ID – int(5), foreign key
+
+l amount – int(5)
+
+l order_data - date
+
+l arrive_date -date
+
+l expense - double
+
+Purchase record relationship
+
+One purchase record can be linked to one customer. One to One relationship.
+
+One purchase record can be linked to one product. One to One relationship.
+
+8. Create the database of supplier information
+
+
+CREATE  TABLE `e1100587_project`.`supplier_info` (
+
+  `supplier_ID` INT(5) NOT NULL ,
+
+  `address_ID` INT(5) NOT NULL ,
+
+  `name` VARCHAR(10) NULL ,
+
+  `email` VARCHAR(10) NULL ,
+
+  `password` VARCHAR(10) NULL ,
+
+  `last_update` TIMESTAMP NULL
+
+)
+
+Supplier information
+
+l name – varchar(10)
+
+l supplier_ID – int(5), primary key
+
+l email – varchar(10)
+
+l address_ID – int(5), foreign key
+
+l password – varchar(10)
+
+l last_update - timestamp
+
+Supplier relationship
+
+One supplier can be linked to one address. One to One relationship
+
+9. Create the database of supply record
+
+
+CREATE  TABLE `e1100587_project`.`supply_record` (
+
+  `supply_ID` INT(10) NOT NULL ,
+
+  `product_ID` INT(5) NOT NULL ,
+
+  `supplier_ID` INT(5) NOT NULL ,
+
+  `amount` INT(5) NULL ,
+
+  `order_date` DATE NULL ,
+
+  `arrive_date` DATE NULL ,
+
+  `shipment_expense` DOUBLE NULL
+
+)
+
+Supply record
+
+l supply_ID – int(10), primary key
+
+l supplier_ID – int(5), foreign key
+
+l product_ID – int(5), foreign key
+
+l amount – int(5)
+
+l order_date - date
+
+l arrive_date - date
+
+l shipment_expense - double
+
+Supply record relationship
+
+One supply record can be linked to one supplier. One to One relationship.
+
+One supply record can be linked to one product. One to One relationship.
+
+10. Create the database of view information
+
+
+CREATE  TABLE `e1100587_project`.`view` (
+
+  `view_ID` INT(5) NOT NULL ,
+
+  `name` VARCHAR(10) NULL ,
+
+  `description` TEXT NULL ,
+
+  `view` MEDIUMBLOB NULL ,
+
+  `last_update` TIMESTAMP NULL
+
+)
+
+View information
+
+l view_ID – int(5), primary key
+
+l name – varchar(10)
+
+l description – text
+
+l view – mediumblob
+
+l last_update - timestamp
+
+
+11. Create the database of product type
+
+CREATE  TABLE `e1100587_project`.`product_type` (
+
+  `product_type_ID` INT(10) NOT NULL ,
+
+  `name` VARCHAR(20) NULL 
+
+)
+
+Product type
+
+
+l product_type_ID – int(10), primary key
+
+l name – varchar(20)
+
