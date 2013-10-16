@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>JSP_Example22</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+
+<!--Here we declare servlet's registered name -->
+
+<servlet-name>UserForm</servlet-name>
+
+<servlet-class>servlet.UserForm</servlet-class>
+
+</servlet>
+
+<servlet-mapping>
+
+<servlet-name>UserForm</servlet-name>
+
+<url-pattern>/index.html</url-pattern>
+
+</servlet-mapping>
+  <servlet>
+
+<!--Here we declare servlet's registered name -->
+
+<servlet-name>Register</servlet-name>
+
+<servlet-class>servlet.Register</servlet-class>
+
+</servlet>
+
+<servlet-mapping>
+
+<servlet-name>Register</servlet-name>
+
+<url-pattern>/Register</url-pattern>
+
+</servlet-mapping>
+  <servlet>
+
+<!--Here we declare servlet's registered name -->
+
+<servlet-name>Searchinfo</servlet-name>
+
+<servlet-class>servlet.Searchinfo</servlet-class>
+
+</servlet>
+
+<servlet-mapping>
+
+<servlet-name>Searchinfo</servlet-name>
+
+<url-pattern>/search.html</url-pattern>
+
+</servlet-mapping>
+  <servlet>
+
+<!--Here we declare servlet's registered name -->
+
+<servlet-name>Changeinfo</servlet-name>
+
+<servlet-class>servlet.Changeinfo</servlet-class>
+
+</servlet>
+
+<servlet-mapping>
+
+<servlet-name>Changeinfo</servlet-name>
+
+<url-pattern>/change.html</url-pattern>
+
+</servlet-mapping>  
+  <servlet>
+
+<!--Here we declare servlet's registered name -->
+
+<servlet-name>purchase</servlet-name>
+
+<servlet-class>servlet.purchase</servlet-class>
+
+</servlet>
+
+<servlet-mapping>
+
+<servlet-name>purchase</servlet-name>
+
+<url-pattern>/purchase.html</url-pattern>
+
+</servlet-mapping> 
+  <servlet>
+
+<!--Here we declare servlet's registered name -->
+
+<servlet-name>purchaseranking</servlet-name>
+
+<servlet-class>servlet.purchaseranking</servlet-class>
+
+</servlet>
+
+<servlet-mapping>
+
+<servlet-name>purchaseranking</servlet-name>
+
+<url-pattern>/purchaseranking</url-pattern>
+
+</servlet-mapping> 
+
+  <servlet>
+<servlet-name>comparision</servlet-name>
+<servlet-class>servlet.comparision</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>comparision</servlet-name>
+<url-pattern>/comparision.html</url-pattern>
+</servlet-mapping>
+  
+    <servlet>
+<servlet-name>showpurchaserecord</servlet-name>
+<servlet-class>servlet.showpurchaserecord</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>showpurchaserecord</servlet-name>
+<url-pattern>/showpurchaserecord</url-pattern>
+</servlet-mapping>
+    <servlet>
+<servlet-name>report</servlet-name>
+<servlet-class>servlet.report</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>report</servlet-name>
+<url-pattern>/report.html</url-pattern>
+</servlet-mapping>
+    <servlet>
+<servlet-name>confirm</servlet-name>
+<servlet-class>servlet.confirm</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>confirm</servlet-name>
+<url-pattern>/confirm</url-pattern>
+</servlet-mapping>
+
+</web-app>
+
+ 

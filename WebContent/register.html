@@ -1,0 +1,1628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script  type="text/javascript">
+var passwordflag=0;
+ function check(arg)
+ {
+     if(arg=="0")
+     {
+         document.getElementById("Customer").style.display="block";
+		 document.getElementById("Supplier").style.display="none";
+      }
+     if(arg=="1")
+      {
+     	 document.getElementById("Customer").style.display="none";
+         document.getElementById("Supplier").style.display="block";
+      }
+ }
+ function checkcontent()
+ {
+    if(document.getElementById("select").value=="0")
+	{if((passwordflag==1)&&(document.getElementById("cname").value!='')&&(document.getElementById("cgender").value!="0")&&(document.getElementById("cage").value!='')&&(document.getElementById("cemail").value!='')&&(document.getElementById("caddress").value!='')&&(document.getElementById("cdistrict").value!='')&&(document.getElementById("cpostcode").value!='')&&(document.getElementById("cphone").value!='')&&(document.getElementById("ccity").value!="0")&&(document.getElementById("ccountry").value!="0")&&(document.getElementById("cpassword").value!='')&&(document.getElementById("cpassword1").value!=''))
+		{
+		    document.getElementById("register").style.display="block";
+		}
+		else
+		    {
+			alert("Something empty!");
+			document.getElementById("register").style.display="none";
+			}
+	}
+	else
+	{
+		if((passwordflag==1)&&(document.getElementById("sname").value!='')&&(document.getElementById("semail").value!='')&&(document.getElementById("saddress").value!='')&&(document.getElementById("sdistrict").value!='')&&(document.getElementById("spostcode").value!='')&&(document.getElementById("sphone").value!='')&&(document.getElementById("scity").value!="0")&&(document.getElementById("scountry").value!="0")&&(document.getElementById("spassword").value!='')&&(document.getElementById("spassword1").value!=''))
+		{
+		    document.getElementById("register").style.display="block";
+		}
+		else
+		    {
+			alert("Something empty!");
+			document.getElementById("register").style.display="none";			
+			}
+	}
+ }
+function compare()
+ {
+	if(document.getElementById("select").value=="0")
+	{
+		if((document.getElementById("cpassword").value!=document.getElementById("cpassword1").value))
+		{
+		document.getElementById("ccompare").style.display="block";
+		passwordflag=0;
+		}
+		else
+		{document.getElementById("ccompare").style.display="none";		
+		passwordflag=1;}
+	}
+	else
+	{
+		if((document.getElementById("spassword").value!=document.getElementById("spassword1").value))
+		{
+		document.getElementById("scompare").style.display="block";
+		passwordflag=0;
+		}
+		else
+		{
+		document.getElementById("scompare").style.display="none";
+		passwordflag=1;
+		}
+	}
+ }
+ 
+</script>
+
+<title>Registration</title>
+<h2>Welcome to the registration page!<h2>
+<h2>Please enter the information</h2>
+</head>
+
+<body>
+<form method='POST' action='Register'>
+
+<table border="0"><tr><td>Type</td><td>
+  <select name="type" id="select" onchange="check(this.options[selectedIndex].value)">
+    <option value="0">Customer</option>
+    <option value="1">Supplier</option>
+  </select>
+</td></tr></table>
+
+
+
+<div id="Customer" style="display:block">
+<table border="0"><tr><td>Your Name</td><td bgcolor="red" ><input type="text" id="cname" size="20" name="cname">
+</td></tr>
+<tr><td>Gender</td><td>
+  <select name="cgender" id="cgender">
+    <option value="0">None</option>
+    <option value="1">Male</option>
+    <option value="2">Female</option>
+  </select>
+</td></tr>
+<tr><td>Age</td>
+<td bgcolor="red" ><input type="text" id="cage" size="20" name="cage" >
+</td></tr>
+<tr><td>Email</td>
+<td bgcolor="red" ><input type="text" id="cemail" size="20" name="cemail" >
+</td></tr>
+<tr><td>Address</td>
+<td bgcolor="red" ><input type="text" id="caddress" size="20" name="caddress" >
+</td></tr>
+<tr><td>District</td>
+<td bgcolor="red" ><input type="text" id="cdistrict" size="20" name="cdistrict" >
+</td></tr>
+<tr><td>Postcode</td>
+<td bgcolor="red" ><input type="text" id="cpostcode" size="20" name="cpostcode" >
+</td></tr>
+<tr><td>Phone</td>
+<td bgcolor="red" ><input type="text" id="cphone" size="20" name="cphone" >
+</td></tr>
+
+<tr><td>City</td>
+<td>
+<select name="ccity" id="ccity">
+<option value='0'>None</option>
+<option value='1'>A Corua (La Corua)</option>
+<option value='2'>Abha</option>
+<option value='3'>Abu Dhabi</option>
+<option value='4'>Acua</option>
+<option value='5'>Adana</option>
+<option value='6'>Addis Abeba</option>
+<option value='7'>Aden</option>
+<option value='8'>Adoni</option>
+<option value='9'>Ahmadnagar</option>
+<option value='10'>Akishima</option>
+<option value='11'>Akron</option>
+<option value='12'>al-Ayn</option>
+<option value='13'>al-Hawiya</option>
+<option value='14'>al-Manama</option>
+<option value='15'>al-Qadarif</option>
+<option value='16'>al-Qatif</option>
+<option value='17'>Alessandria</option>
+<option value='18'>Allappuzha (Alleppey)</option>
+<option value='19'>Allende</option>
+<option value='20'>Almirante Brown</option>
+<option value='21'>Alvorada</option>
+<option value='22'>Ambattur</option>
+<option value='23'>Amersfoort</option>
+<option value='24'>Amroha</option>
+<option value='25'>Angra dos Reis</option>
+<option value='26'>Anpolis</option>
+<option value='27'>Antofagasta</option>
+<option value='28'>Aparecida de Goinia</option>
+<option value='29'>Apeldoorn</option>
+<option value='30'>Araatuba</option>
+<option value='31'>Arak</option>
+<option value='32'>Arecibo</option>
+<option value='33'>Arlington</option>
+<option value='34'>Ashdod</option>
+<option value='35'>Ashgabat</option>
+<option value='36'>Ashqelon</option>
+<option value='37'>Asuncin</option>
+<option value='38'>Athenai</option>
+<option value='39'>Atinsk</option>
+<option value='40'>Atlixco</option>
+<option value='41'>Augusta-Richmond County</option>
+<option value='42'>Aurora</option>
+<option value='43'>Avellaneda</option>
+<option value='44'>Bag</option>
+<option value='45'>Baha Blanca</option>
+<option value='46'>Baicheng</option>
+<option value='47'>Baiyin</option>
+<option value='48'>Baku</option>
+<option value='49'>Balaiha</option>
+<option value='50'>Balikesir</option>
+<option value='51'>Balurghat</option>
+<option value='52'>Bamenda</option>
+<option value='53'>Bandar Seri Begawan</option>
+<option value='54'>Banjul</option>
+<option value='55'>Barcelona</option>
+<option value='56'>Basel</option>
+<option value='57'>Bat Yam</option>
+<option value='58'>Batman</option>
+<option value='59'>Batna</option>
+<option value='60'>Battambang</option>
+<option value='61'>Baybay</option>
+<option value='62'>Bayugan</option>
+<option value='63'>Bchar</option>
+<option value='64'>Beira</option>
+<option value='65'>Bellevue</option>
+<option value='66'>Belm</option>
+<option value='67'>Benguela</option>
+<option value='68'>Beni-Mellal</option>
+<option value='69'>Benin City</option>
+<option value='70'>Bergamo</option>
+<option value='71'>Berhampore (Baharampur)</option>
+<option value='72'>Bern</option>
+<option value='73'>Bhavnagar</option>
+<option value='74'>Bhilwara</option>
+<option value='75'>Bhimavaram</option>
+<option value='76'>Bhopal</option>
+<option value='77'>Bhusawal</option>
+<option value='78'>Bijapur</option>
+<option value='79'>Bilbays</option>
+<option value='80'>Binzhou</option>
+<option value='81'>Birgunj</option>
+<option value='82'>Bislig</option>
+<option value='83'>Blumenau</option>
+<option value='84'>Boa Vista</option>
+<option value='85'>Boksburg</option>
+<option value='86'>Botosani</option>
+<option value='87'>Botshabelo</option>
+<option value='88'>Bradford</option>
+<option value='89'>Braslia</option>
+<option value='90'>Bratislava</option>
+<option value='91'>Brescia</option>
+<option value='92'>Brest</option>
+<option value='93'>Brindisi</option>
+<option value='94'>Brockton</option>
+<option value='95'>Bucuresti</option>
+<option value='96'>Buenaventura</option>
+<option value='97'>Bydgoszcz</option>
+<option value='98'>Cabuyao</option>
+<option value='99'>Callao</option>
+<option value='100'>Cam Ranh</option>
+<option value='101'>Cape Coral</option>
+<option value='102'>Caracas</option>
+<option value='103'>Carmen</option>
+<option value='104'>Cavite</option>
+<option value='105'>Cayenne</option>
+<option value='106'>Celaya</option>
+<option value='107'>Chandrapur</option>
+<option value='108'>Changhwa</option>
+<option value='109'>Changzhou</option>
+<option value='110'>Chapra</option>
+<option value='111'>Charlotte Amalie</option>
+<option value='112'>Chatsworth</option>
+<option value='113'>Cheju</option>
+<option value='114'>Chiayi</option>
+<option value='115'>Chisinau</option>
+<option value='116'>Chungho</option>
+<option value='117'>Cianjur</option>
+<option value='118'>Ciomas</option>
+<option value='119'>Ciparay</option>
+<option value='120'>Citrus Heights</option>
+<option value='121'>Citt del Vaticano</option>
+<option value='122'>Ciudad del Este</option>
+<option value='123'>Clarksville</option>
+<option value='124'>Coacalco de Berriozbal</option>
+<option value='125'>Coatzacoalcos</option>
+<option value='126'>Compton</option>
+<option value='127'>Coquimbo</option>
+<option value='128'>Crdoba</option>
+<option value='129'>Cuauhtmoc</option>
+<option value='130'>Cuautla</option>
+<option value='131'>Cuernavaca</option>
+<option value='132'>Cuman</option>
+<option value='133'>Czestochowa</option>
+<option value='134'>Dadu</option>
+<option value='135'>Dallas</option>
+<option value='136'>Datong</option>
+<option value='137'>Daugavpils</option>
+<option value='138'>Davao</option>
+<option value='139'>Daxian</option>
+<option value='140'>Dayton</option>
+<option value='141'>Deba Habe</option>
+<option value='142'>Denizli</option>
+<option value='143'>Dhaka</option>
+<option value='144'>Dhule (Dhulia)</option>
+<option value='145'>Dongying</option>
+<option value='146'>Donostia-San Sebastin</option>
+<option value='147'>Dos Quebradas</option>
+<option value='148'>Duisburg</option>
+<option value='149'>Dundee</option>
+<option value='150'>Dzerzinsk</option>
+<option value='151'>Ede</option>
+<option value='152'>Effon-Alaiye</option>
+<option value='153'>El Alto</option>
+<option value='154'>El Fuerte</option>
+<option value='155'>El Monte</option>
+<option value='156'>Elista</option>
+<option value='157'>Emeishan</option>
+<option value='158'>Emmen</option>
+<option value='159'>Enshi</option>
+<option value='160'>Erlangen</option>
+<option value='161'>Escobar</option>
+<option value='162'>Esfahan</option>
+<option value='163'>Eskisehir</option>
+<option value='164'>Etawah</option>
+<option value='165'>Ezeiza</option>
+<option value='166'>Ezhou</option>
+<option value='167'>Faaa</option>
+<option value='168'>Fengshan</option>
+<option value='169'>Firozabad</option>
+<option value='170'>Florencia</option>
+<option value='171'>Fontana</option>
+<option value='172'>Fukuyama</option>
+<option value='173'>Funafuti</option>
+<option value='174'>Fuyu</option>
+<option value='175'>Fuzhou</option>
+<option value='176'>Gandhinagar</option>
+<option value='177'>Garden Grove</option>
+<option value='178'>Garland</option>
+<option value='179'>Gatineau</option>
+<option value='180'>Gaziantep</option>
+<option value='181'>Gijn</option>
+<option value='182'>Gingoog</option>
+<option value='183'>Goinia</option>
+<option value='184'>Gorontalo</option>
+<option value='185'>Grand Prairie</option>
+<option value='186'>Graz</option>
+<option value='187'>Greensboro</option>
+<option value='188'>Guadalajara</option>
+<option value='189'>Guaruj</option>
+<option value='190'>guas Lindas de Gois</option>
+<option value='191'>Gulbarga</option>
+<option value='192'>Hagonoy</option>
+<option value='193'>Haining</option>
+<option value='194'>Haiphong</option>
+<option value='195'>Haldia</option>
+<option value='196'>Halifax</option>
+<option value='197'>Halisahar</option>
+<option value='198'>Halle/Saale</option>
+<option value='199'>Hami</option>
+<option value='200'>Hamilton</option>
+<option value='201'>Hanoi</option>
+<option value='202'>Hidalgo</option>
+<option value='203'>Higashiosaka</option>
+<option value='204'>Hino</option>
+<option value='205'>Hiroshima</option>
+<option value='206'>Hodeida</option>
+<option value='207'>Hohhot</option>
+<option value='208'>Hoshiarpur</option>
+<option value='209'>Hsichuh</option>
+<option value='210'>Huaian</option>
+<option value='211'>Hubli-Dharwad</option>
+<option value='212'>Huejutla de Reyes</option>
+<option value='213'>Huixquilucan</option>
+<option value='214'>Hunuco</option>
+<option value='215'>Ibirit</option>
+<option value='216'>Idfu</option>
+<option value='217'>Ife</option>
+<option value='218'>Ikerre</option>
+<option value='219'>Iligan</option>
+<option value='220'>Ilorin</option>
+<option value='221'>Imus</option>
+<option value='222'>Inegl</option>
+<option value='223'>Ipoh</option>
+<option value='224'>Isesaki</option>
+<option value='225'>Ivanovo</option>
+<option value='226'>Iwaki</option>
+<option value='227'>Iwakuni</option>
+<option value='228'>Iwatsuki</option>
+<option value='229'>Izumisano</option>
+<option value='230'>Jaffna</option>
+<option value='231'>Jaipur</option>
+<option value='232'>Jakarta</option>
+<option value='233'>Jalib al-Shuyukh</option>
+<option value='234'>Jamalpur</option>
+<option value='235'>Jaroslavl</option>
+<option value='236'>Jastrzebie-Zdrj</option>
+<option value='237'>Jedda</option>
+<option value='238'>Jelets</option>
+<option value='239'>Jhansi</option>
+<option value='240'>Jinchang</option>
+<option value='241'>Jining</option>
+<option value='242'>Jinzhou</option>
+<option value='243'>Jodhpur</option>
+<option value='244'>Johannesburg</option>
+<option value='245'>Joliet</option>
+<option value='246'>Jos Azueta</option>
+<option value='247'>Juazeiro do Norte</option>
+<option value='248'>Juiz de Fora</option>
+<option value='249'>Junan</option>
+<option value='250'>Jurez</option>
+<option value='251'>Kabul</option>
+<option value='252'>Kaduna</option>
+<option value='253'>Kakamigahara</option>
+<option value='254'>Kaliningrad</option>
+<option value='255'>Kalisz</option>
+<option value='256'>Kamakura</option>
+<option value='257'>Kamarhati</option>
+<option value='258'>Kamjanets-Podilskyi</option>
+<option value='259'>Kamyin</option>
+<option value='260'>Kanazawa</option>
+<option value='261'>Kanchrapara</option>
+<option value='262'>Kansas City</option>
+<option value='263'>Karnal</option>
+<option value='264'>Katihar</option>
+<option value='265'>Kermanshah</option>
+<option value='266'>Kilis</option>
+<option value='267'>Kimberley</option>
+<option value='268'>Kimchon</option>
+<option value='269'>Kingstown</option>
+<option value='270'>Kirovo-Tepetsk</option>
+<option value='271'>Kisumu</option>
+<option value='272'>Kitwe</option>
+<option value='273'>Klerksdorp</option>
+<option value='274'>Kolpino</option>
+<option value='275'>Konotop</option>
+<option value='276'>Koriyama</option>
+<option value='277'>Korla</option>
+<option value='278'>Korolev</option>
+<option value='279'>Kowloon and New Kowloon</option>
+<option value='280'>Kragujevac</option>
+<option value='281'>Ktahya</option>
+<option value='282'>Kuching</option>
+<option value='283'>Kumbakonam</option>
+<option value='284'>Kurashiki</option>
+<option value='285'>Kurgan</option>
+<option value='286'>Kursk</option>
+<option value='287'>Kuwana</option>
+<option value='288'>La Paz</option>
+<option value='289'>La Plata</option>
+<option value='290'>La Romana</option>
+<option value='291'>Laiwu</option>
+<option value='292'>Lancaster</option>
+<option value='293'>Laohekou</option>
+<option value='294'>Lapu-Lapu</option>
+<option value='295'>Laredo</option>
+<option value='296'>Lausanne</option>
+<option value='297'>Le Mans</option>
+<option value='298'>Lengshuijiang</option>
+<option value='299'>Leshan</option>
+<option value='300'>Lethbridge</option>
+<option value='301'>Lhokseumawe</option>
+<option value='302'>Liaocheng</option>
+<option value='303'>Liepaja</option>
+<option value='304'>Lilongwe</option>
+<option value='305'>Lima</option>
+<option value='306'>Lincoln</option>
+<option value='307'>Linz</option>
+<option value='308'>Lipetsk</option>
+<option value='309'>Livorno</option>
+<option value='310'>Ljubertsy</option>
+<option value='311'>Loja</option>
+<option value='312'>London</option>
+<option value='313'>London</option>
+<option value='314'>Lublin</option>
+<option value='315'>Lubumbashi</option>
+<option value='316'>Lungtan</option>
+<option value='317'>Luzinia</option>
+<option value='318'>Madiun</option>
+<option value='319'>Mahajanga</option>
+<option value='320'>Maikop</option>
+<option value='321'>Malm</option>
+<option value='322'>Manchester</option>
+<option value='323'>Mandaluyong</option>
+<option value='324'>Mandi Bahauddin</option>
+<option value='325'>Mannheim</option>
+<option value='326'>Maracabo</option>
+<option value='327'>Mardan</option>
+<option value='328'>Maring</option>
+<option value='329'>Masqat</option>
+<option value='330'>Matamoros</option>
+<option value='331'>Matsue</option>
+<option value='332'>Meixian</option>
+<option value='333'>Memphis</option>
+<option value='334'>Merlo</option>
+<option value='335'>Mexicali</option>
+<option value='336'>Miraj</option>
+<option value='337'>Mit Ghamr</option>
+<option value='338'>Miyakonojo</option>
+<option value='339'>Mogiljov</option>
+<option value='340'>Molodetno</option>
+<option value='341'>Monclova</option>
+<option value='342'>Monywa</option>
+<option value='343'>Moscow</option>
+<option value='344'>Mosul</option>
+<option value='345'>Mukateve</option>
+<option value='346'>Munger (Monghyr)</option>
+<option value='347'>Mwanza</option>
+<option value='348'>Mwene-Ditu</option>
+<option value='349'>Myingyan</option>
+<option value='350'>Mysore</option>
+<option value='351'>Naala-Porto</option>
+<option value='352'>Nabereznyje Telny</option>
+<option value='353'>Nador</option>
+<option value='354'>Nagaon</option>
+<option value='355'>Nagareyama</option>
+<option value='356'>Najafabad</option>
+<option value='357'>Naju</option>
+<option value='358'>Nakhon Sawan</option>
+<option value='359'>Nam Dinh</option>
+<option value='360'>Namibe</option>
+<option value='361'>Nantou</option>
+<option value='362'>Nanyang</option>
+<option value='363'>NDjamna</option>
+<option value='364'>Newcastle</option>
+<option value='365'>Nezahualcyotl</option>
+<option value='366'>Nha Trang</option>
+<option value='367'>Niznekamsk</option>
+<option value='368'>Novi Sad</option>
+<option value='369'>Novoterkassk</option>
+<option value='370'>Nukualofa</option>
+<option value='371'>Nuuk</option>
+<option value='372'>Nyeri</option>
+<option value='373'>Ocumare del Tuy</option>
+<option value='374'>Ogbomosho</option>
+<option value='375'>Okara</option>
+<option value='376'>Okayama</option>
+<option value='377'>Okinawa</option>
+<option value='378'>Olomouc</option>
+<option value='379'>Omdurman</option>
+<option value='380'>Omiya</option>
+<option value='381'>Ondo</option>
+<option value='382'>Onomichi</option>
+<option value='383'>Oshawa</option>
+<option value='384'>Osmaniye</option>
+<option value='385'>ostka</option>
+<option value='386'>Otsu</option>
+<option value='387'>Oulu</option>
+<option value='388'>Ourense (Orense)</option>
+<option value='389'>Owo</option>
+<option value='390'>Oyo</option>
+<option value='391'>Ozamis</option>
+<option value='392'>Paarl</option>
+<option value='393'>Pachuca de Soto</option>
+<option value='394'>Pak Kret</option>
+<option value='395'>Palghat (Palakkad)</option>
+<option value='396'>Pangkal Pinang</option>
+<option value='397'>Papeete</option>
+<option value='398'>Parbhani</option>
+<option value='399'>Pathankot</option>
+<option value='400'>Patiala</option>
+<option value='401'>Patras</option>
+<option value='402'>Pavlodar</option>
+<option value='403'>Pemalang</option>
+<option value='404'>Peoria</option>
+<option value='405'>Pereira</option>
+<option value='406'>Phnom Penh</option>
+<option value='407'>Pingxiang</option>
+<option value='408'>Pjatigorsk</option>
+<option value='409'>Plock</option>
+<option value='410'>Po</option>
+<option value='411'>Ponce</option>
+<option value='412'>Pontianak</option>
+<option value='413'>Poos de Caldas</option>
+<option value='414'>Portoviejo</option>
+<option value='415'>Probolinggo</option>
+<option value='416'>Pudukkottai</option>
+<option value='417'>Pune</option>
+<option value='418'>Purnea (Purnia)</option>
+<option value='419'>Purwakarta</option>
+<option value='420'>Pyongyang</option>
+<option value='421'>Qalyub</option>
+<option value='422'>Qinhuangdao</option>
+<option value='423'>Qomsheh</option>
+<option value='424'>Quilmes</option>
+<option value='425'>Rae Bareli</option>
+<option value='426'>Rajkot</option>
+<option value='427'>Rampur</option>
+<option value='428'>Rancagua</option>
+<option value='429'>Ranchi</option>
+<option value='430'>Richmond Hill</option>
+<option value='431'>Rio Claro</option>
+<option value='432'>Rizhao</option>
+<option value='433'>Roanoke</option>
+<option value='434'>Robamba</option>
+<option value='435'>Rockford</option>
+<option value='436'>Ruse</option>
+<option value='437'>Rustenburg</option>
+<option value='438'>s-Hertogenbosch</option>
+<option value='439'>Saarbrcken</option>
+<option value='440'>Sagamihara</option>
+<option value='441'>Saint Louis</option>
+<option value='442'>Saint-Denis</option>
+<option value='443'>Sal</option>
+<option value='444'>Salala</option>
+<option value='445'>Salamanca</option>
+<option value='446'>Salinas</option>
+<option value='447'>Salzburg</option>
+<option value='448'>Sambhal</option>
+<option value='449'>San Bernardino</option>
+<option value='450'>San Felipe de Puerto Plata</option>
+<option value='451'>San Felipe del Progreso</option>
+<option value='452'>San Juan Bautista Tuxtepec</option>
+<option value='453'>San Lorenzo</option>
+<option value='454'>San Miguel de Tucumn</option>
+<option value='455'>Sanaa</option>
+<option value='456'>Santa Brbara dOeste</option>
+<option value='457'>Santa F</option>
+<option value='458'>Santa Rosa</option>
+<option value='459'>Santiago de Compostela</option>
+<option value='460'>Santiago de los Caballeros</option>
+<option value='461'>Santo Andr</option>
+<option value='462'>Sanya</option>
+<option value='463'>Sasebo</option>
+<option value='464'>Satna</option>
+<option value='465'>Sawhaj</option>
+<option value='466'>Serpuhov</option>
+<option value='467'>Shahr-e Kord</option>
+<option value='468'>Shanwei</option>
+<option value='469'>Shaoguan</option>
+<option value='470'>Sharja</option>
+<option value='471'>Shenzhen</option>
+<option value='472'>Shikarpur</option>
+<option value='473'>Shimoga</option>
+<option value='474'>Shimonoseki</option>
+<option value='475'>Shivapuri</option>
+<option value='476'>Shubra al-Khayma</option>
+<option value='477'>Siegen</option>
+<option value='478'>Siliguri (Shiliguri)</option>
+<option value='479'>Simferopol</option>
+<option value='480'>Sincelejo</option>
+<option value='481'>Sirjan</option>
+<option value='482'>Sivas</option>
+<option value='483'>Skikda</option>
+<option value='484'>Smolensk</option>
+<option value='485'>So Bernardo do Campo</option>
+<option value='486'>So Leopoldo</option>
+<option value='487'>Sogamoso</option>
+<option value='488'>Sokoto</option>
+<option value='489'>Songkhla</option>
+<option value='490'>Sorocaba</option>
+<option value='491'>Soshanguve</option>
+<option value='492'>Sousse</option>
+<option value='493'>South Hill</option>
+<option value='494'>Southampton</option>
+<option value='495'>Southend-on-Sea</option>
+<option value='496'>Southport</option>
+<option value='497'>Springs</option>
+<option value='498'>Stara Zagora</option>
+<option value='499'>Sterling Heights</option>
+<option value='500'>Stockport</option>
+<option value='501'>Sucre</option>
+<option value='502'>Suihua</option>
+<option value='503'>Sullana</option>
+<option value='504'>Sultanbeyli</option>
+<option value='505'>Sumqayit</option>
+<option value='506'>Sumy</option>
+<option value='507'>Sungai Petani</option>
+<option value='508'>Sunnyvale</option>
+<option value='509'>Surakarta</option>
+<option value='510'>Syktyvkar</option>
+<option value='511'>Syrakusa</option>
+<option value='512'>Szkesfehrvr</option>
+<option value='513'>Tabora</option>
+<option value='514'>Tabriz</option>
+<option value='515'>Tabuk</option>
+<option value='516'>Tafuna</option>
+<option value='517'>Taguig</option>
+<option value='518'>Taizz</option>
+<option value='519'>Talavera</option>
+<option value='520'>Tallahassee</option>
+<option value='521'>Tama</option>
+<option value='522'>Tambaram</option>
+<option value='523'>Tanauan</option>
+<option value='524'>Tandil</option>
+<option value='525'>Tangail</option>
+<option value='526'>Tanshui</option>
+<option value='527'>Tanza</option>
+<option value='528'>Tarlac</option>
+<option value='529'>Tarsus</option>
+<option value='530'>Tartu</option>
+<option value='531'>Teboksary</option>
+<option value='532'>Tegal</option>
+<option value='533'>Tel Aviv-Jaffa</option>
+<option value='534'>Tete</option>
+<option value='535'>Tianjin</option>
+<option value='536'>Tiefa</option>
+<option value='537'>Tieli</option>
+<option value='538'>Tokat</option>
+<option value='539'>Tonghae</option>
+<option value='540'>Tongliao</option>
+<option value='541'>Torren</option>
+<option value='542'>Touliu</option>
+<option value='543'>Toulon</option>
+<option value='544'>Toulouse</option>
+<option value='545'>Trshavn</option>
+<option value='546'>Tsaotun</option>
+<option value='547'>Tsuyama</option>
+<option value='548'>Tuguegarao</option>
+<option value='549'>Tychy</option>
+<option value='550'>Udaipur</option>
+<option value='551'>Udine</option>
+<option value='552'>Ueda</option>
+<option value='553'>Uijongbu</option>
+<option value='554'>Uluberia</option>
+<option value='555'>Urawa</option>
+<option value='556'>Uruapan</option>
+<option value='557'>Usak</option>
+<option value='558'>Usolje-Sibirskoje</option>
+<option value='559'>Uttarpara-Kotrung</option>
+<option value='560'>Vaduz</option>
+<option value='561'>Valencia</option>
+<option value='562'>Valle de la Pascua</option>
+<option value='563'>Valle de Santiago</option>
+<option value='564'>Valparai</option>
+<option value='565'>Vancouver</option>
+<option value='566'>Varanasi (Benares)</option>
+<option value='567'>Vicente Lpez</option>
+<option value='568'>Vijayawada</option>
+<option value='569'>Vila Velha</option>
+<option value='570'>Vilnius</option>
+<option value='571'>Vinh</option>
+<option value='572'>Vitria de Santo Anto</option>
+<option value='573'>Warren</option>
+<option value='574'>Weifang</option>
+<option value='575'>Witten</option>
+<option value='576'>Woodridge</option>
+<option value='577'>Wroclaw</option>
+<option value='578'>Xiangfan</option>
+<option value='579'>Xiangtan</option>
+<option value='580'>Xintai</option>
+<option value='581'>Xinxiang</option>
+<option value='582'>Yamuna Nagar</option>
+<option value='583'>Yangor</option>
+<option value='584'>Yantai</option>
+<option value='585'>Yaound</option>
+<option value='586'>Yerevan</option>
+<option value='587'>Yinchuan</option>
+<option value='588'>Yingkou</option>
+<option value='589'>York</option>
+<option value='590'>Yuncheng</option>
+<option value='591'>Yuzhou</option>
+<option value='592'>Zalantun</option>
+<option value='593'>Zanzibar</option>
+<option value='594'>Zaoyang</option>
+<option value='595'>Zapopan</option>
+<option value='596'>Zaria</option>
+<option value='597'>Zeleznogorsk</option>
+<option value='598'>Zhezqazghan</option>
+<option value='599'>Zhoushan</option>
+<option value='600'>Ziguinchor</option>
+</select>
+</td>
+</tr>
+
+
+<tr><td>Country</td>
+<td>
+<select name="ccountry" id="ccountry">
+<option value='0'>None</option>
+<option value='1'>Afghanistan</option>
+<option value='2'>Algeria</option>
+<option value='3'>American Samoa</option>
+<option value='4'>Angola</option>
+<option value='5'>Anguilla</option>
+<option value='6'>Argentina</option>
+<option value='7'>Armenia</option>
+<option value='8'>Australia</option>
+<option value='9'>Austria</option>
+<option value='10'>Azerbaijan</option>
+<option value='11'>Bahrain</option>
+<option value='12'>Bangladesh</option>
+<option value='13'>Belarus</option>
+<option value='14'>Bolivia</option>
+<option value='15'>Brazil</option>
+<option value='16'>Brunei</option>
+<option value='17'>Bulgaria</option>
+<option value='18'>Cambodia</option>
+<option value='19'>Cameroon</option>
+<option value='20'>Canada</option>
+<option value='21'>Chad</option>
+<option value='22'>Chile</option>
+<option value='23'>China</option>
+<option value='24'>Colombia</option>
+<option value='25'>Congo, The Democratic Republic of the</option>
+<option value='26'>Czech Republic</option>
+<option value='27'>Dominican Republic</option>
+<option value='28'>Ecuador</option>
+<option value='29'>Egypt</option>
+<option value='30'>Estonia</option>
+<option value='31'>Ethiopia</option>
+<option value='32'>Faroe Islands</option>
+<option value='33'>Finland</option>
+<option value='34'>France</option>
+<option value='35'>French Guiana</option>
+<option value='36'>French Polynesia</option>
+<option value='37'>Gambia</option>
+<option value='38'>Germany</option>
+<option value='39'>Greece</option>
+<option value='40'>Greenland</option>
+<option value='41'>Holy See (Vatican City State)</option>
+<option value='42'>Hong Kong</option>
+<option value='43'>Hungary</option>
+<option value='44'>India</option>
+<option value='45'>Indonesia</option>
+<option value='46'>Iran</option>
+<option value='47'>Iraq</option>
+<option value='48'>Israel</option>
+<option value='49'>Italy</option>
+<option value='50'>Japan</option>
+<option value='51'>Kazakstan</option>
+<option value='52'>Kenya</option>
+<option value='53'>Kuwait</option>
+<option value='54'>Latvia</option>
+<option value='55'>Liechtenstein</option>
+<option value='56'>Lithuania</option>
+<option value='57'>Madagascar</option>
+<option value='58'>Malawi</option>
+<option value='59'>Malaysia</option>
+<option value='60'>Mexico</option>
+<option value='61'>Moldova</option>
+<option value='62'>Morocco</option>
+<option value='63'>Mozambique</option>
+<option value='64'>Myanmar</option>
+<option value='65'>Nauru</option>
+<option value='66'>Nepal</option>
+<option value='67'>Netherlands</option>
+<option value='68'>New Zealand</option>
+<option value='69'>Nigeria</option>
+<option value='70'>North Korea</option>
+<option value='71'>Oman</option>
+<option value='72'>Pakistan</option>
+<option value='73'>Paraguay</option>
+<option value='74'>Peru</option>
+<option value='75'>Philippines</option>
+<option value='76'>Poland</option>
+<option value='77'>Puerto Rico</option>
+<option value='78'>Romania</option>
+<option value='79'>Runion</option>
+<option value='80'>Russian Federation</option>
+<option value='81'>Saint Vincent and the Grenadines</option>
+<option value='82'>Saudi Arabia</option>
+<option value='83'>Senegal</option>
+<option value='84'>Slovakia</option>
+<option value='85'>South Africa</option>
+<option value='86'>South Korea</option>
+<option value='87'>Spain</option>
+<option value='88'>Sri Lanka</option>
+<option value='89'>Sudan</option>
+<option value='90'>Sweden</option>
+<option value='91'>Switzerland</option>
+<option value='92'>Taiwan</option>
+<option value='93'>Tanzania</option>
+<option value='94'>Thailand</option>
+<option value='95'>Tonga</option>
+<option value='96'>Tunisia</option>
+<option value='97'>Turkey</option>
+<option value='98'>Turkmenistan</option>
+<option value='99'>Tuvalu</option>
+<option value='100'>Ukraine</option>
+<option value='101'>United Arab Emirates</option>
+<option value='102'>United Kingdom</option>
+<option value='103'>United States</option>
+<option value='104'>Venezuela</option>
+<option value='105'>Vietnam</option>
+<option value='106'>Virgin Islands, U.S.</option>
+<option value='107'>Yemen</option>
+<option value='108'>Yugoslavia</option>
+<option value='109'>Zambia</option>
+</select>
+</td>
+</tr>
+<tr><td>Password</td>
+<td bgcolor="red" ><input type="password"  id="cpassword" size="20" name="cpassword" >
+</td></tr>
+<tr><td>Confirm your password</td>
+<td bgcolor="red" ><input type="password" id="cpassword1" onmousemove="compare" onmouseout="compare()" size="20" name="cpassword1" ></td><td id="ccompare" style="display:none">Different with the password above
+</td></tr>
+</table>
+</div>
+
+<div id="Supplier" style="display:none">
+<table border="0">
+<tr><td>Your Name</td><td bgcolor="red"  ><input type="text" id="sname" size="20" name="sname" >
+</td></tr>
+<tr><td>Email</td>
+<td bgcolor="red"  ><input type="text" id="semail" size="20" name="semail" >
+</td></tr>
+
+<tr><td>Address</td>
+<td bgcolor="red" ><input type="text" id="saddress" size="20" name="saddress" >
+</td></tr>
+<tr><td>District</td>
+<td bgcolor="red" ><input type="text" id="sdistrict" size="20" name="sdistrict" >
+</td></tr>
+<tr><td>Postcode</td>
+<td bgcolor="red" ><input type="text" id="spostcode" size="20" name="spostcode" >
+</td></tr>
+<tr><td>Phone</td>
+<td bgcolor="red"  ><input type="text" id="sphone" size="20" name="sphone" >
+</td></tr>
+
+<tr><td>City</td>
+<td>
+<select name="scity"  id="scity">
+<option value='0'>None</option>
+<option value='1'>A Corua (La Corua)</option>
+<option value='2'>Abha</option>
+<option value='3'>Abu Dhabi</option>
+<option value='4'>Acua</option>
+<option value='5'>Adana</option>
+<option value='6'>Addis Abeba</option>
+<option value='7'>Aden</option>
+<option value='8'>Adoni</option>
+<option value='9'>Ahmadnagar</option>
+<option value='10'>Akishima</option>
+<option value='11'>Akron</option>
+<option value='12'>al-Ayn</option>
+<option value='13'>al-Hawiya</option>
+<option value='14'>al-Manama</option>
+<option value='15'>al-Qadarif</option>
+<option value='16'>al-Qatif</option>
+<option value='17'>Alessandria</option>
+<option value='18'>Allappuzha (Alleppey)</option>
+<option value='19'>Allende</option>
+<option value='20'>Almirante Brown</option>
+<option value='21'>Alvorada</option>
+<option value='22'>Ambattur</option>
+<option value='23'>Amersfoort</option>
+<option value='24'>Amroha</option>
+<option value='25'>Angra dos Reis</option>
+<option value='26'>Anpolis</option>
+<option value='27'>Antofagasta</option>
+<option value='28'>Aparecida de Goinia</option>
+<option value='29'>Apeldoorn</option>
+<option value='30'>Araatuba</option>
+<option value='31'>Arak</option>
+<option value='32'>Arecibo</option>
+<option value='33'>Arlington</option>
+<option value='34'>Ashdod</option>
+<option value='35'>Ashgabat</option>
+<option value='36'>Ashqelon</option>
+<option value='37'>Asuncin</option>
+<option value='38'>Athenai</option>
+<option value='39'>Atinsk</option>
+<option value='40'>Atlixco</option>
+<option value='41'>Augusta-Richmond County</option>
+<option value='42'>Aurora</option>
+<option value='43'>Avellaneda</option>
+<option value='44'>Bag</option>
+<option value='45'>Baha Blanca</option>
+<option value='46'>Baicheng</option>
+<option value='47'>Baiyin</option>
+<option value='48'>Baku</option>
+<option value='49'>Balaiha</option>
+<option value='50'>Balikesir</option>
+<option value='51'>Balurghat</option>
+<option value='52'>Bamenda</option>
+<option value='53'>Bandar Seri Begawan</option>
+<option value='54'>Banjul</option>
+<option value='55'>Barcelona</option>
+<option value='56'>Basel</option>
+<option value='57'>Bat Yam</option>
+<option value='58'>Batman</option>
+<option value='59'>Batna</option>
+<option value='60'>Battambang</option>
+<option value='61'>Baybay</option>
+<option value='62'>Bayugan</option>
+<option value='63'>Bchar</option>
+<option value='64'>Beira</option>
+<option value='65'>Bellevue</option>
+<option value='66'>Belm</option>
+<option value='67'>Benguela</option>
+<option value='68'>Beni-Mellal</option>
+<option value='69'>Benin City</option>
+<option value='70'>Bergamo</option>
+<option value='71'>Berhampore (Baharampur)</option>
+<option value='72'>Bern</option>
+<option value='73'>Bhavnagar</option>
+<option value='74'>Bhilwara</option>
+<option value='75'>Bhimavaram</option>
+<option value='76'>Bhopal</option>
+<option value='77'>Bhusawal</option>
+<option value='78'>Bijapur</option>
+<option value='79'>Bilbays</option>
+<option value='80'>Binzhou</option>
+<option value='81'>Birgunj</option>
+<option value='82'>Bislig</option>
+<option value='83'>Blumenau</option>
+<option value='84'>Boa Vista</option>
+<option value='85'>Boksburg</option>
+<option value='86'>Botosani</option>
+<option value='87'>Botshabelo</option>
+<option value='88'>Bradford</option>
+<option value='89'>Braslia</option>
+<option value='90'>Bratislava</option>
+<option value='91'>Brescia</option>
+<option value='92'>Brest</option>
+<option value='93'>Brindisi</option>
+<option value='94'>Brockton</option>
+<option value='95'>Bucuresti</option>
+<option value='96'>Buenaventura</option>
+<option value='97'>Bydgoszcz</option>
+<option value='98'>Cabuyao</option>
+<option value='99'>Callao</option>
+<option value='100'>Cam Ranh</option>
+<option value='101'>Cape Coral</option>
+<option value='102'>Caracas</option>
+<option value='103'>Carmen</option>
+<option value='104'>Cavite</option>
+<option value='105'>Cayenne</option>
+<option value='106'>Celaya</option>
+<option value='107'>Chandrapur</option>
+<option value='108'>Changhwa</option>
+<option value='109'>Changzhou</option>
+<option value='110'>Chapra</option>
+<option value='111'>Charlotte Amalie</option>
+<option value='112'>Chatsworth</option>
+<option value='113'>Cheju</option>
+<option value='114'>Chiayi</option>
+<option value='115'>Chisinau</option>
+<option value='116'>Chungho</option>
+<option value='117'>Cianjur</option>
+<option value='118'>Ciomas</option>
+<option value='119'>Ciparay</option>
+<option value='120'>Citrus Heights</option>
+<option value='121'>Citt del Vaticano</option>
+<option value='122'>Ciudad del Este</option>
+<option value='123'>Clarksville</option>
+<option value='124'>Coacalco de Berriozbal</option>
+<option value='125'>Coatzacoalcos</option>
+<option value='126'>Compton</option>
+<option value='127'>Coquimbo</option>
+<option value='128'>Crdoba</option>
+<option value='129'>Cuauhtmoc</option>
+<option value='130'>Cuautla</option>
+<option value='131'>Cuernavaca</option>
+<option value='132'>Cuman</option>
+<option value='133'>Czestochowa</option>
+<option value='134'>Dadu</option>
+<option value='135'>Dallas</option>
+<option value='136'>Datong</option>
+<option value='137'>Daugavpils</option>
+<option value='138'>Davao</option>
+<option value='139'>Daxian</option>
+<option value='140'>Dayton</option>
+<option value='141'>Deba Habe</option>
+<option value='142'>Denizli</option>
+<option value='143'>Dhaka</option>
+<option value='144'>Dhule (Dhulia)</option>
+<option value='145'>Dongying</option>
+<option value='146'>Donostia-San Sebastin</option>
+<option value='147'>Dos Quebradas</option>
+<option value='148'>Duisburg</option>
+<option value='149'>Dundee</option>
+<option value='150'>Dzerzinsk</option>
+<option value='151'>Ede</option>
+<option value='152'>Effon-Alaiye</option>
+<option value='153'>El Alto</option>
+<option value='154'>El Fuerte</option>
+<option value='155'>El Monte</option>
+<option value='156'>Elista</option>
+<option value='157'>Emeishan</option>
+<option value='158'>Emmen</option>
+<option value='159'>Enshi</option>
+<option value='160'>Erlangen</option>
+<option value='161'>Escobar</option>
+<option value='162'>Esfahan</option>
+<option value='163'>Eskisehir</option>
+<option value='164'>Etawah</option>
+<option value='165'>Ezeiza</option>
+<option value='166'>Ezhou</option>
+<option value='167'>Faaa</option>
+<option value='168'>Fengshan</option>
+<option value='169'>Firozabad</option>
+<option value='170'>Florencia</option>
+<option value='171'>Fontana</option>
+<option value='172'>Fukuyama</option>
+<option value='173'>Funafuti</option>
+<option value='174'>Fuyu</option>
+<option value='175'>Fuzhou</option>
+<option value='176'>Gandhinagar</option>
+<option value='177'>Garden Grove</option>
+<option value='178'>Garland</option>
+<option value='179'>Gatineau</option>
+<option value='180'>Gaziantep</option>
+<option value='181'>Gijn</option>
+<option value='182'>Gingoog</option>
+<option value='183'>Goinia</option>
+<option value='184'>Gorontalo</option>
+<option value='185'>Grand Prairie</option>
+<option value='186'>Graz</option>
+<option value='187'>Greensboro</option>
+<option value='188'>Guadalajara</option>
+<option value='189'>Guaruj</option>
+<option value='190'>guas Lindas de Gois</option>
+<option value='191'>Gulbarga</option>
+<option value='192'>Hagonoy</option>
+<option value='193'>Haining</option>
+<option value='194'>Haiphong</option>
+<option value='195'>Haldia</option>
+<option value='196'>Halifax</option>
+<option value='197'>Halisahar</option>
+<option value='198'>Halle/Saale</option>
+<option value='199'>Hami</option>
+<option value='200'>Hamilton</option>
+<option value='201'>Hanoi</option>
+<option value='202'>Hidalgo</option>
+<option value='203'>Higashiosaka</option>
+<option value='204'>Hino</option>
+<option value='205'>Hiroshima</option>
+<option value='206'>Hodeida</option>
+<option value='207'>Hohhot</option>
+<option value='208'>Hoshiarpur</option>
+<option value='209'>Hsichuh</option>
+<option value='210'>Huaian</option>
+<option value='211'>Hubli-Dharwad</option>
+<option value='212'>Huejutla de Reyes</option>
+<option value='213'>Huixquilucan</option>
+<option value='214'>Hunuco</option>
+<option value='215'>Ibirit</option>
+<option value='216'>Idfu</option>
+<option value='217'>Ife</option>
+<option value='218'>Ikerre</option>
+<option value='219'>Iligan</option>
+<option value='220'>Ilorin</option>
+<option value='221'>Imus</option>
+<option value='222'>Inegl</option>
+<option value='223'>Ipoh</option>
+<option value='224'>Isesaki</option>
+<option value='225'>Ivanovo</option>
+<option value='226'>Iwaki</option>
+<option value='227'>Iwakuni</option>
+<option value='228'>Iwatsuki</option>
+<option value='229'>Izumisano</option>
+<option value='230'>Jaffna</option>
+<option value='231'>Jaipur</option>
+<option value='232'>Jakarta</option>
+<option value='233'>Jalib al-Shuyukh</option>
+<option value='234'>Jamalpur</option>
+<option value='235'>Jaroslavl</option>
+<option value='236'>Jastrzebie-Zdrj</option>
+<option value='237'>Jedda</option>
+<option value='238'>Jelets</option>
+<option value='239'>Jhansi</option>
+<option value='240'>Jinchang</option>
+<option value='241'>Jining</option>
+<option value='242'>Jinzhou</option>
+<option value='243'>Jodhpur</option>
+<option value='244'>Johannesburg</option>
+<option value='245'>Joliet</option>
+<option value='246'>Jos Azueta</option>
+<option value='247'>Juazeiro do Norte</option>
+<option value='248'>Juiz de Fora</option>
+<option value='249'>Junan</option>
+<option value='250'>Jurez</option>
+<option value='251'>Kabul</option>
+<option value='252'>Kaduna</option>
+<option value='253'>Kakamigahara</option>
+<option value='254'>Kaliningrad</option>
+<option value='255'>Kalisz</option>
+<option value='256'>Kamakura</option>
+<option value='257'>Kamarhati</option>
+<option value='258'>Kamjanets-Podilskyi</option>
+<option value='259'>Kamyin</option>
+<option value='260'>Kanazawa</option>
+<option value='261'>Kanchrapara</option>
+<option value='262'>Kansas City</option>
+<option value='263'>Karnal</option>
+<option value='264'>Katihar</option>
+<option value='265'>Kermanshah</option>
+<option value='266'>Kilis</option>
+<option value='267'>Kimberley</option>
+<option value='268'>Kimchon</option>
+<option value='269'>Kingstown</option>
+<option value='270'>Kirovo-Tepetsk</option>
+<option value='271'>Kisumu</option>
+<option value='272'>Kitwe</option>
+<option value='273'>Klerksdorp</option>
+<option value='274'>Kolpino</option>
+<option value='275'>Konotop</option>
+<option value='276'>Koriyama</option>
+<option value='277'>Korla</option>
+<option value='278'>Korolev</option>
+<option value='279'>Kowloon and New Kowloon</option>
+<option value='280'>Kragujevac</option>
+<option value='281'>Ktahya</option>
+<option value='282'>Kuching</option>
+<option value='283'>Kumbakonam</option>
+<option value='284'>Kurashiki</option>
+<option value='285'>Kurgan</option>
+<option value='286'>Kursk</option>
+<option value='287'>Kuwana</option>
+<option value='288'>La Paz</option>
+<option value='289'>La Plata</option>
+<option value='290'>La Romana</option>
+<option value='291'>Laiwu</option>
+<option value='292'>Lancaster</option>
+<option value='293'>Laohekou</option>
+<option value='294'>Lapu-Lapu</option>
+<option value='295'>Laredo</option>
+<option value='296'>Lausanne</option>
+<option value='297'>Le Mans</option>
+<option value='298'>Lengshuijiang</option>
+<option value='299'>Leshan</option>
+<option value='300'>Lethbridge</option>
+<option value='301'>Lhokseumawe</option>
+<option value='302'>Liaocheng</option>
+<option value='303'>Liepaja</option>
+<option value='304'>Lilongwe</option>
+<option value='305'>Lima</option>
+<option value='306'>Lincoln</option>
+<option value='307'>Linz</option>
+<option value='308'>Lipetsk</option>
+<option value='309'>Livorno</option>
+<option value='310'>Ljubertsy</option>
+<option value='311'>Loja</option>
+<option value='312'>London</option>
+<option value='313'>London</option>
+<option value='314'>Lublin</option>
+<option value='315'>Lubumbashi</option>
+<option value='316'>Lungtan</option>
+<option value='317'>Luzinia</option>
+<option value='318'>Madiun</option>
+<option value='319'>Mahajanga</option>
+<option value='320'>Maikop</option>
+<option value='321'>Malm</option>
+<option value='322'>Manchester</option>
+<option value='323'>Mandaluyong</option>
+<option value='324'>Mandi Bahauddin</option>
+<option value='325'>Mannheim</option>
+<option value='326'>Maracabo</option>
+<option value='327'>Mardan</option>
+<option value='328'>Maring</option>
+<option value='329'>Masqat</option>
+<option value='330'>Matamoros</option>
+<option value='331'>Matsue</option>
+<option value='332'>Meixian</option>
+<option value='333'>Memphis</option>
+<option value='334'>Merlo</option>
+<option value='335'>Mexicali</option>
+<option value='336'>Miraj</option>
+<option value='337'>Mit Ghamr</option>
+<option value='338'>Miyakonojo</option>
+<option value='339'>Mogiljov</option>
+<option value='340'>Molodetno</option>
+<option value='341'>Monclova</option>
+<option value='342'>Monywa</option>
+<option value='343'>Moscow</option>
+<option value='344'>Mosul</option>
+<option value='345'>Mukateve</option>
+<option value='346'>Munger (Monghyr)</option>
+<option value='347'>Mwanza</option>
+<option value='348'>Mwene-Ditu</option>
+<option value='349'>Myingyan</option>
+<option value='350'>Mysore</option>
+<option value='351'>Naala-Porto</option>
+<option value='352'>Nabereznyje Telny</option>
+<option value='353'>Nador</option>
+<option value='354'>Nagaon</option>
+<option value='355'>Nagareyama</option>
+<option value='356'>Najafabad</option>
+<option value='357'>Naju</option>
+<option value='358'>Nakhon Sawan</option>
+<option value='359'>Nam Dinh</option>
+<option value='360'>Namibe</option>
+<option value='361'>Nantou</option>
+<option value='362'>Nanyang</option>
+<option value='363'>NDjamna</option>
+<option value='364'>Newcastle</option>
+<option value='365'>Nezahualcyotl</option>
+<option value='366'>Nha Trang</option>
+<option value='367'>Niznekamsk</option>
+<option value='368'>Novi Sad</option>
+<option value='369'>Novoterkassk</option>
+<option value='370'>Nukualofa</option>
+<option value='371'>Nuuk</option>
+<option value='372'>Nyeri</option>
+<option value='373'>Ocumare del Tuy</option>
+<option value='374'>Ogbomosho</option>
+<option value='375'>Okara</option>
+<option value='376'>Okayama</option>
+<option value='377'>Okinawa</option>
+<option value='378'>Olomouc</option>
+<option value='379'>Omdurman</option>
+<option value='380'>Omiya</option>
+<option value='381'>Ondo</option>
+<option value='382'>Onomichi</option>
+<option value='383'>Oshawa</option>
+<option value='384'>Osmaniye</option>
+<option value='385'>ostka</option>
+<option value='386'>Otsu</option>
+<option value='387'>Oulu</option>
+<option value='388'>Ourense (Orense)</option>
+<option value='389'>Owo</option>
+<option value='390'>Oyo</option>
+<option value='391'>Ozamis</option>
+<option value='392'>Paarl</option>
+<option value='393'>Pachuca de Soto</option>
+<option value='394'>Pak Kret</option>
+<option value='395'>Palghat (Palakkad)</option>
+<option value='396'>Pangkal Pinang</option>
+<option value='397'>Papeete</option>
+<option value='398'>Parbhani</option>
+<option value='399'>Pathankot</option>
+<option value='400'>Patiala</option>
+<option value='401'>Patras</option>
+<option value='402'>Pavlodar</option>
+<option value='403'>Pemalang</option>
+<option value='404'>Peoria</option>
+<option value='405'>Pereira</option>
+<option value='406'>Phnom Penh</option>
+<option value='407'>Pingxiang</option>
+<option value='408'>Pjatigorsk</option>
+<option value='409'>Plock</option>
+<option value='410'>Po</option>
+<option value='411'>Ponce</option>
+<option value='412'>Pontianak</option>
+<option value='413'>Poos de Caldas</option>
+<option value='414'>Portoviejo</option>
+<option value='415'>Probolinggo</option>
+<option value='416'>Pudukkottai</option>
+<option value='417'>Pune</option>
+<option value='418'>Purnea (Purnia)</option>
+<option value='419'>Purwakarta</option>
+<option value='420'>Pyongyang</option>
+<option value='421'>Qalyub</option>
+<option value='422'>Qinhuangdao</option>
+<option value='423'>Qomsheh</option>
+<option value='424'>Quilmes</option>
+<option value='425'>Rae Bareli</option>
+<option value='426'>Rajkot</option>
+<option value='427'>Rampur</option>
+<option value='428'>Rancagua</option>
+<option value='429'>Ranchi</option>
+<option value='430'>Richmond Hill</option>
+<option value='431'>Rio Claro</option>
+<option value='432'>Rizhao</option>
+<option value='433'>Roanoke</option>
+<option value='434'>Robamba</option>
+<option value='435'>Rockford</option>
+<option value='436'>Ruse</option>
+<option value='437'>Rustenburg</option>
+<option value='438'>s-Hertogenbosch</option>
+<option value='439'>Saarbrcken</option>
+<option value='440'>Sagamihara</option>
+<option value='441'>Saint Louis</option>
+<option value='442'>Saint-Denis</option>
+<option value='443'>Sal</option>
+<option value='444'>Salala</option>
+<option value='445'>Salamanca</option>
+<option value='446'>Salinas</option>
+<option value='447'>Salzburg</option>
+<option value='448'>Sambhal</option>
+<option value='449'>San Bernardino</option>
+<option value='450'>San Felipe de Puerto Plata</option>
+<option value='451'>San Felipe del Progreso</option>
+<option value='452'>San Juan Bautista Tuxtepec</option>
+<option value='453'>San Lorenzo</option>
+<option value='454'>San Miguel de Tucumn</option>
+<option value='455'>Sanaa</option>
+<option value='456'>Santa Brbara dOeste</option>
+<option value='457'>Santa F</option>
+<option value='458'>Santa Rosa</option>
+<option value='459'>Santiago de Compostela</option>
+<option value='460'>Santiago de los Caballeros</option>
+<option value='461'>Santo Andr</option>
+<option value='462'>Sanya</option>
+<option value='463'>Sasebo</option>
+<option value='464'>Satna</option>
+<option value='465'>Sawhaj</option>
+<option value='466'>Serpuhov</option>
+<option value='467'>Shahr-e Kord</option>
+<option value='468'>Shanwei</option>
+<option value='469'>Shaoguan</option>
+<option value='470'>Sharja</option>
+<option value='471'>Shenzhen</option>
+<option value='472'>Shikarpur</option>
+<option value='473'>Shimoga</option>
+<option value='474'>Shimonoseki</option>
+<option value='475'>Shivapuri</option>
+<option value='476'>Shubra al-Khayma</option>
+<option value='477'>Siegen</option>
+<option value='478'>Siliguri (Shiliguri)</option>
+<option value='479'>Simferopol</option>
+<option value='480'>Sincelejo</option>
+<option value='481'>Sirjan</option>
+<option value='482'>Sivas</option>
+<option value='483'>Skikda</option>
+<option value='484'>Smolensk</option>
+<option value='485'>So Bernardo do Campo</option>
+<option value='486'>So Leopoldo</option>
+<option value='487'>Sogamoso</option>
+<option value='488'>Sokoto</option>
+<option value='489'>Songkhla</option>
+<option value='490'>Sorocaba</option>
+<option value='491'>Soshanguve</option>
+<option value='492'>Sousse</option>
+<option value='493'>South Hill</option>
+<option value='494'>Southampton</option>
+<option value='495'>Southend-on-Sea</option>
+<option value='496'>Southport</option>
+<option value='497'>Springs</option>
+<option value='498'>Stara Zagora</option>
+<option value='499'>Sterling Heights</option>
+<option value='500'>Stockport</option>
+<option value='501'>Sucre</option>
+<option value='502'>Suihua</option>
+<option value='503'>Sullana</option>
+<option value='504'>Sultanbeyli</option>
+<option value='505'>Sumqayit</option>
+<option value='506'>Sumy</option>
+<option value='507'>Sungai Petani</option>
+<option value='508'>Sunnyvale</option>
+<option value='509'>Surakarta</option>
+<option value='510'>Syktyvkar</option>
+<option value='511'>Syrakusa</option>
+<option value='512'>Szkesfehrvr</option>
+<option value='513'>Tabora</option>
+<option value='514'>Tabriz</option>
+<option value='515'>Tabuk</option>
+<option value='516'>Tafuna</option>
+<option value='517'>Taguig</option>
+<option value='518'>Taizz</option>
+<option value='519'>Talavera</option>
+<option value='520'>Tallahassee</option>
+<option value='521'>Tama</option>
+<option value='522'>Tambaram</option>
+<option value='523'>Tanauan</option>
+<option value='524'>Tandil</option>
+<option value='525'>Tangail</option>
+<option value='526'>Tanshui</option>
+<option value='527'>Tanza</option>
+<option value='528'>Tarlac</option>
+<option value='529'>Tarsus</option>
+<option value='530'>Tartu</option>
+<option value='531'>Teboksary</option>
+<option value='532'>Tegal</option>
+<option value='533'>Tel Aviv-Jaffa</option>
+<option value='534'>Tete</option>
+<option value='535'>Tianjin</option>
+<option value='536'>Tiefa</option>
+<option value='537'>Tieli</option>
+<option value='538'>Tokat</option>
+<option value='539'>Tonghae</option>
+<option value='540'>Tongliao</option>
+<option value='541'>Torren</option>
+<option value='542'>Touliu</option>
+<option value='543'>Toulon</option>
+<option value='544'>Toulouse</option>
+<option value='545'>Trshavn</option>
+<option value='546'>Tsaotun</option>
+<option value='547'>Tsuyama</option>
+<option value='548'>Tuguegarao</option>
+<option value='549'>Tychy</option>
+<option value='550'>Udaipur</option>
+<option value='551'>Udine</option>
+<option value='552'>Ueda</option>
+<option value='553'>Uijongbu</option>
+<option value='554'>Uluberia</option>
+<option value='555'>Urawa</option>
+<option value='556'>Uruapan</option>
+<option value='557'>Usak</option>
+<option value='558'>Usolje-Sibirskoje</option>
+<option value='559'>Uttarpara-Kotrung</option>
+<option value='560'>Vaduz</option>
+<option value='561'>Valencia</option>
+<option value='562'>Valle de la Pascua</option>
+<option value='563'>Valle de Santiago</option>
+<option value='564'>Valparai</option>
+<option value='565'>Vancouver</option>
+<option value='566'>Varanasi (Benares)</option>
+<option value='567'>Vicente Lpez</option>
+<option value='568'>Vijayawada</option>
+<option value='569'>Vila Velha</option>
+<option value='570'>Vilnius</option>
+<option value='571'>Vinh</option>
+<option value='572'>Vitria de Santo Anto</option>
+<option value='573'>Warren</option>
+<option value='574'>Weifang</option>
+<option value='575'>Witten</option>
+<option value='576'>Woodridge</option>
+<option value='577'>Wroclaw</option>
+<option value='578'>Xiangfan</option>
+<option value='579'>Xiangtan</option>
+<option value='580'>Xintai</option>
+<option value='581'>Xinxiang</option>
+<option value='582'>Yamuna Nagar</option>
+<option value='583'>Yangor</option>
+<option value='584'>Yantai</option>
+<option value='585'>Yaound</option>
+<option value='586'>Yerevan</option>
+<option value='587'>Yinchuan</option>
+<option value='588'>Yingkou</option>
+<option value='589'>York</option>
+<option value='590'>Yuncheng</option>
+<option value='591'>Yuzhou</option>
+<option value='592'>Zalantun</option>
+<option value='593'>Zanzibar</option>
+<option value='594'>Zaoyang</option>
+<option value='595'>Zapopan</option>
+<option value='596'>Zaria</option>
+<option value='597'>Zeleznogorsk</option>
+<option value='598'>Zhezqazghan</option>
+<option value='599'>Zhoushan</option>
+<option value='600'>Ziguinchor</option>
+</select>
+</td>
+</tr>
+
+
+<tr><td>Country</td>
+<td>
+<select name="scountry"  id="scountry">
+<option value='0'>None</option>
+<option value='1'>Afghanistan</option>
+<option value='2'>Algeria</option>
+<option value='3'>American Samoa</option>
+<option value='4'>Angola</option>
+<option value='5'>Anguilla</option>
+<option value='6'>Argentina</option>
+<option value='7'>Armenia</option>
+<option value='8'>Australia</option>
+<option value='9'>Austria</option>
+<option value='10'>Azerbaijan</option>
+<option value='11'>Bahrain</option>
+<option value='12'>Bangladesh</option>
+<option value='13'>Belarus</option>
+<option value='14'>Bolivia</option>
+<option value='15'>Brazil</option>
+<option value='16'>Brunei</option>
+<option value='17'>Bulgaria</option>
+<option value='18'>Cambodia</option>
+<option value='19'>Cameroon</option>
+<option value='20'>Canada</option>
+<option value='21'>Chad</option>
+<option value='22'>Chile</option>
+<option value='23'>China</option>
+<option value='24'>Colombia</option>
+<option value='25'>Congo, The Democratic Republic of the</option>
+<option value='26'>Czech Republic</option>
+<option value='27'>Dominican Republic</option>
+<option value='28'>Ecuador</option>
+<option value='29'>Egypt</option>
+<option value='30'>Estonia</option>
+<option value='31'>Ethiopia</option>
+<option value='32'>Faroe Islands</option>
+<option value='33'>Finland</option>
+<option value='34'>France</option>
+<option value='35'>French Guiana</option>
+<option value='36'>French Polynesia</option>
+<option value='37'>Gambia</option>
+<option value='38'>Germany</option>
+<option value='39'>Greece</option>
+<option value='40'>Greenland</option>
+<option value='41'>Holy See (Vatican City State)</option>
+<option value='42'>Hong Kong</option>
+<option value='43'>Hungary</option>
+<option value='44'>India</option>
+<option value='45'>Indonesia</option>
+<option value='46'>Iran</option>
+<option value='47'>Iraq</option>
+<option value='48'>Israel</option>
+<option value='49'>Italy</option>
+<option value='50'>Japan</option>
+<option value='51'>Kazakstan</option>
+<option value='52'>Kenya</option>
+<option value='53'>Kuwait</option>
+<option value='54'>Latvia</option>
+<option value='55'>Liechtenstein</option>
+<option value='56'>Lithuania</option>
+<option value='57'>Madagascar</option>
+<option value='58'>Malawi</option>
+<option value='59'>Malaysia</option>
+<option value='60'>Mexico</option>
+<option value='61'>Moldova</option>
+<option value='62'>Morocco</option>
+<option value='63'>Mozambique</option>
+<option value='64'>Myanmar</option>
+<option value='65'>Nauru</option>
+<option value='66'>Nepal</option>
+<option value='67'>Netherlands</option>
+<option value='68'>New Zealand</option>
+<option value='69'>Nigeria</option>
+<option value='70'>North Korea</option>
+<option value='71'>Oman</option>
+<option value='72'>Pakistan</option>
+<option value='73'>Paraguay</option>
+<option value='74'>Peru</option>
+<option value='75'>Philippines</option>
+<option value='76'>Poland</option>
+<option value='77'>Puerto Rico</option>
+<option value='78'>Romania</option>
+<option value='79'>Runion</option>
+<option value='80'>Russian Federation</option>
+<option value='81'>Saint Vincent and the Grenadines</option>
+<option value='82'>Saudi Arabia</option>
+<option value='83'>Senegal</option>
+<option value='84'>Slovakia</option>
+<option value='85'>South Africa</option>
+<option value='86'>South Korea</option>
+<option value='87'>Spain</option>
+<option value='88'>Sri Lanka</option>
+<option value='89'>Sudan</option>
+<option value='90'>Sweden</option>
+<option value='91'>Switzerland</option>
+<option value='92'>Taiwan</option>
+<option value='93'>Tanzania</option>
+<option value='94'>Thailand</option>
+<option value='95'>Tonga</option>
+<option value='96'>Tunisia</option>
+<option value='97'>Turkey</option>
+<option value='98'>Turkmenistan</option>
+<option value='99'>Tuvalu</option>
+<option value='100'>Ukraine</option>
+<option value='101'>United Arab Emirates</option>
+<option value='102'>United Kingdom</option>
+<option value='103'>United States</option>
+<option value='104'>Venezuela</option>
+<option value='105'>Vietnam</option>
+<option value='106'>Virgin Islands, U.S.</option>
+<option value='107'>Yemen</option>
+<option value='108'>Yugoslavia</option>
+<option value='109'>Zambia</option>
+</select>
+</td>
+</tr>
+<tr><td>Password</td>
+<td bgcolor="red"  ><input type="password" id="spassword" size="20" name="spassword" >
+</td></tr>
+<tr><td>Confirm your password</td>
+<td bgcolor="red"  ><input type="password" id="spassword1" onmousemove="compare" onmouseout="compare()" size="20" name="spassword1" ></td><td id="scompare" style="display:none">Different with the password above
+</td></tr>
+
+</table>
+</div>
+
+<div>
+<input type="button" value="Test" onclick="checkcontent()"/>
+</div>
+
+<div id="register" style="display:none">
+<table border="0">
+<tr>
+<td valign="top">
+<input type="submit" value="Register">
+</td>
+</tr>
+</table>
+</div>
+</form>
+</body>
+</html>
